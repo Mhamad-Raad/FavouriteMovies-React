@@ -40,14 +40,13 @@ function App() {
   };
 
   const addMoviesHandler = async (movie) => {
-    const response = await fetch('https://starwars-movies-react-default-rtdb.firebaseio.com/movies.json', {
+    await fetch('https://starwars-movies-react-default-rtdb.firebaseio.com/movies.json', {
       method: 'POST',
       body: JSON.stringify(movie),
       headers: {
         'Content-Type': 'application/json'
       }
     });
-    const data = await response.json();
   }
 
   let content = <p>FETCH !!!!</p>;
